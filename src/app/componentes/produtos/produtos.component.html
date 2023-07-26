@@ -1,0 +1,20 @@
+
+
+<div class="container my-5">
+  <h1 class="mb-3">Produtos</h1>
+
+  <table class="table" *ngIf="produtos">
+    <thead>
+      <th>Id</th>
+      <th>Nome do Produto</th>
+      <th>Preço</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let produto of produtos">
+        <td>{{produto.id}}</td>
+        <td>{{produto.nome}}</td>
+        <td>{{produto.preco}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

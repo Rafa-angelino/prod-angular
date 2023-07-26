@@ -1,0 +1,19 @@
+<div class="container my-5">
+  <h1 class="mb-3">Adicionar Produto</h1>
+  <form #form="ngForm" (ngSubmit) = "adicionarProduto()">
+    <div class="mb-3">
+      <label for="nome" class="col-sm-2 col-form-label">Nome</label>
+      <input type="text" class="form-control" id="nome" name="nome">
+    </div>
+    <div class="mb-3">
+      <label for="preco" class="col-sm-2 col-form-label">Preço</label>
+        <input type="text" class="form-control" id="preco" name="preco" ngModel>
+
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+  </form>
+</div>
+
+
+
+
