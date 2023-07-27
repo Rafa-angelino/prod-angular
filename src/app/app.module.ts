@@ -4,19 +4,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProdutosComponent } from './componentes/produtos/produtos.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {  HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { AdicionarProdutoComponent } from './componentes/adicionar-produto/adicionar-produto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProdutosComponent,
+    AdicionarProdutoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Produto } from 'src/app/modelos/produto';
+import { ProdutoRequisicao } from 'src/app/modelos/produtoRequisicao';
 import { ProdutoServiceService } from 'src/app/services/produto-service.service';
 
 @Component({
@@ -10,18 +12,23 @@ import { ProdutoServiceService } from 'src/app/services/produto-service.service'
 })
 export class AdicionarProdutoComponent {
 
-  produto: Produto = {
-    id: 0,
-    nome:'',
+  produto: ProdutoRequisicao  = {
+    nome: '',
     preco: 0
   }
 
   constructor(private produtoService: ProdutoServiceService, private router: Router) {}
 
-  adicionarProduto() {
+  adicionarProduto(form: NgForm) {
     this.produtoService.salvarProduto(this.produto).subscribe({
-      next: response => this.router.navigate(['produtos'])
+      next: response => {
+        console.log(response);
+        this.router.navigate(['produtos']);
+      },
+      error: err => console.log(err)
+
     })
+    form.reset();
   }
 
 }

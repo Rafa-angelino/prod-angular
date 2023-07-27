@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
 import { Observable } from 'rxjs';
+import { ProdutoRequisicao } from '../modelos/produtoRequisicao';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class ProdutoServiceService {
     return this.http.get<Produto[]>(this.baseUrl + '/Produto/buscarTodosProdutos');
   }
 
-  salvarProduto(produto : Produto) : Observable<Produto> {
+  salvarProduto(produto : ProdutoRequisicao) : Observable<ProdutoRequisicao> {
     return this.http.post<Produto>(this.baseUrl + '/Produto/salvarProduto', produto);
   }
 }
